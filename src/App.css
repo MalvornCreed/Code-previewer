@@ -1,38 +1,89 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+textarea#editor {
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+  resize: none;
+  outline: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+div#preview {
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #fff;
+  overflow-y: auto;
+  color: #333;
+  line-height: 1.6;
+}
+
+div#preview h1, div#preview h2, div#preview h3, div#preview h4, div#preview h5, div#preview h6 {
+  margin-top: 1em;
+  color: #333;
+}
+
+div#preview a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+div#preview a:hover {
+  text-decoration: underline;
+}
+
+div#preview code {
+  background-color: #f8f8f8;
+  border-radius: 3px;
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+}
+
+div#preview pre {
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+div#preview blockquote {
+  padding: 10px 20px;
+  margin: 0;
+  border-left: 5px solid #ccc;
+  background-color: #f9f9f9;
+  color: #666;
+}
+
+div#preview img {
+  max-width: 100%;
+  height: auto;
+}
+
+div#preview ul, div#preview ol {
+  padding-left: 40px;
 }

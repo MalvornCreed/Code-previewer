@@ -1,25 +1,48 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { marked } from 'marked';
 import './App.css';
 
+const initialMarkdown = `
+# Heading (H1)
+## Subheading (H2)
+
+This is a [link](https://www.example.com).
+
+Here is some \`inline code\`.
+
+\`\`\`
+This is a code block.
+\`\`\`
+
+- List item
+
+> Blockquote
+
+![Image](https://via.placeholder.com/150)
+
+**Bold text**
+`;
+
 function App() {
+  const [markdown, setMarkdown] = useState(initialMarkdown);
+
+  const handleChange = (event) => {
+    setMarkdown(event.target.value);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <textarea
+        id="editor"
+        value={markdown}
+        onChange={handleChange}
+      />
+      <div
+        id="preview"
+        dangerouslySetInnerHTML={{ __html: marked(markdown) }}
+      />
     </div>
   );
 }
 
-export default App;
+export default App
